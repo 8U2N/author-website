@@ -1,0 +1,41 @@
+.heading {
+  overflow: hidden;
+
+  .comics-wrapper {
+    background-image: url("../images/backgrounds/mobile-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 50px;
+    overflow: scroll;
+    width: 100vw;
+
+    .featured-image-container {
+      img {
+        box-shadow: 1px 3px 3px 3px slategray;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+    }
+
+    .content-container {
+      background-color: $white;
+      border-radius: 10px;
+      width: 80vw;
+      text-align: justify;
+      padding: 10px;
+      margin-top: 20px;
+      margin-bottom: 40px;
+      box-shadow: 1px 3px 3px 3px slategray;
+    }
+  }
+}

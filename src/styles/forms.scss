@@ -1,0 +1,66 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Orbitron", sans-serif;
+
+  .form {
+    display: grid;
+    grid-template-columns: repeat(1fr, auto);
+    grid-gap: 2rem;
+    padding: 20px;
+    margin-top: 70px;
+    @include dropshadow;
+    background-color: black;
+
+    .success-banner {
+      background-color: $green;
+      padding: 10px;
+      border-radius: 5px;
+      @include dropshadow;
+    }
+
+    input,
+    textarea {
+      outline: none;
+      transition: all 0.3s ease-in-out;
+      font-size: 1.25rem;
+      padding: 15px;
+
+      &:hover {
+        border-bottom: 3px solid $green;
+      }
+      &:focus {
+        border: none;
+        @include dropshadow;
+        transform: translate(0, -10%);
+      }
+    }
+
+    span {
+      color: red;
+      text-align: center;
+      font-size: 1.1rem;
+    }
+
+    input {
+      height: 2rem;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+    }
+
+    textarea {
+      resize: none;
+
+      &:focus {
+        height: 12rem;
+      }
+    }
+
+    button {
+      @include formButton;
+    }
+  }
+}

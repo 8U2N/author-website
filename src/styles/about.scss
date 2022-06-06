@@ -1,0 +1,33 @@
+.about-wrapper {
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  @include pageStyle;
+
+  img {
+    @include image-wrap;
+  }
+
+  h1,
+  h2 {
+    color: $white;
+    text-shadow: 2px 2px black;
+    font-family: "Orbitron", sans-serif;
+    letter-spacing: 3px;
+  }
+
+  a {
+    color: darkcyan;
+    transition: 0.3s ease-in-out;
+    text-decoration: none;
+
+    em {
+      color: $white;
+    }
+
+    &:hover {
+      color: darkred;
+    }
+  }
+}

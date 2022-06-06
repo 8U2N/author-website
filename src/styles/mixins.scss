@@ -1,0 +1,148 @@
+@mixin linkStyle {
+  color: $white;
+  transition: 0.3s ease-in-out;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: darkred;
+  }
+}
+
+@mixin text-style {
+  background-color: $white;
+  border-radius: 10px;
+  width: 88vw;
+  text-align: justify;
+  padding: 10px;
+  box-shadow: 1px 3px 3px 3px slategray;
+}
+
+@mixin image-wrap {
+  box-shadow: 1px 3px 3px 3px slategray;
+  border-radius: 10px;
+}
+
+@mixin grid-style {
+  .grid-container {
+    display: grid;
+    grid-template-rows: repeat (1fr, auto);
+    grid-gap: 20px;
+
+    .row {
+      padding: 10px;
+
+      img {
+        @include image-wrap;
+        margin-top: 20px;
+      }
+
+      .content-container {
+        @include text-style;
+        margin-top: 20px;
+      }
+    }
+  }
+}
+
+@mixin dropshadow {
+  box-shadow: 1px 3px 3px 3px slategray;
+}
+
+@mixin formStyle {
+  .success-banner {
+    background-color: $green;
+    padding: 10px;
+    border-radius: 5px;
+    @include dropshadow;
+  }
+
+  input,
+  textarea {
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 1.25rem;
+    padding: 15px;
+
+    &:hover {
+      border-bottom: 3px solid $green;
+    }
+    &:focus {
+      border: none;
+      @include dropshadow;
+      transform: translate(0, -10%);
+    }
+  }
+
+  span {
+    color: red;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+
+  input {
+    height: 2rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  textarea {
+    resize: none;
+
+    &:focus {
+      height: 12rem;
+    }
+  }
+
+  button {
+    background-color: black;
+    color: $white;
+  }
+}
+
+@mixin formButton {
+  background-color: black;
+  color: $white;
+  font-size: 2rem;
+  border-radius: 10px;
+  font-family: "Orbitron", sans-serif;
+
+  &:hover {
+    background-color: $green;
+    transform: translate(0, -10%);
+    @include dropshadow;
+  }
+}
+
+@mixin pageStyle {
+  background-image: url("../images/backgrounds/mobile-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 40px;
+  overflow: scroll;
+
+  .featured-image-container {
+    img {
+      box-shadow: 1px 3px 3px 3px slategray;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .content-container {
+    background-color: $white;
+    border-radius: 10px;
+    width: 80vw;
+    text-align: justify;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 1px 3px 3px 3px slategray;
+  }
+}

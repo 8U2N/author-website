@@ -1,0 +1,44 @@
+.home-wrapper {
+  background-image: url("../images/backgrounds/mobile-bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
+  padding-bottom: 80px;
+  overflow: scroll;
+  padding-right: 40px;
+
+  a {
+    @include linkStyle;
+  }
+
+  .featured-image-container {
+    img {
+      box-shadow: 1px 3px 3px 3px slategray;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+  }
+
+  .content-container {
+    background-color: $white;
+    color: black;
+    border-radius: 10px;
+    width: 80vw;
+    text-align: justify;
+    padding: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 1px 3px 3px 3px slategray;
+    display: flex;
+    flex-direction: column;
+  }
+
+  button {
+    @include formButton;
+    margin-top: 20px;
+  }
+}
