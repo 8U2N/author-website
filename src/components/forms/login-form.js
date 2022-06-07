@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
+import PostManager from "../pages/post-manager";
 
 export default function LoginForm() {
   const [values, setValues] = useState({
@@ -9,8 +10,6 @@ export default function LoginForm() {
   });
 
   const token = sessionStorage.getItem("token");
-
-  const history = useHistory();
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
@@ -53,7 +52,9 @@ export default function LoginForm() {
           password: "",
           login: true,
         });
-        history.push("/post-manager");
+        <Redirect
+          to={{ pathname: "/post-manager", component: { PostManager } }}
+        />;
       })
       .catch((error) => {
         console.error("Error: Login Failed!", error);
@@ -68,7 +69,7 @@ export default function LoginForm() {
         <div className="login-banner">Go Ahead and Log In!</div>
       )}
       {token && token !== "" && token !== undefined ? (
-        "You are logged in with this token" + token
+        <PostManager />
       ) : (
         <form className="form" onSubmit={handleSubmit}>
           <input
