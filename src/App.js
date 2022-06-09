@@ -31,13 +31,14 @@ function App() {
           <Route path="/contact" component={Contact} />
           <Route path="/sign-up" component={SignUp} />
           <Route path="/login" component={Login} />
-          {token ? (
+          <Route path="/post/:postId" component={PostDetail} />
+
+          {/* {token ? (
             <Route path="/post-manager" component={PostManager} />
           ) : (
             <Route path="/" component={LandingPage} />
-          )}
-          <Route exact path="/post/:slug" component={PostDetail} />
-          <Route component={ThankYou} />
+          )} */}
+          <Route path="/thank-you" component={ThankYou} />
           <Route component={NoMatch} />
         </Switch>
       </Router>

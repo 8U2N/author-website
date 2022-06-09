@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function PostUploadForm() {
   const [values, setValues] = useState({
@@ -8,7 +8,7 @@ function PostUploadForm() {
     description: "",
   });
 
-  const location = useLocation();
+  const history = useHistory();
 
   const [submitted, setSubmitted] = useState(false);
   const [valid, setValid] = useState(false);
@@ -47,11 +47,11 @@ function PostUploadForm() {
       .then((data) => {
         console.log("This came from the back end:", data);
         setValues({
-          image: values.image,
-          title: values.title,
-          description: values.description,
+          image: "",
+          title: "",
+          description: "",
         });
-        location.push("/post-manager");
+        history.push("/home");
       })
       .catch((error) => {
         console.error("Error: Post upload failed!", error);
