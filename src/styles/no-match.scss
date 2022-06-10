@@ -1,0 +1,18 @@
+.no-match-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px;
+
+  a {
+    @include linkStyle;
+    color: black;
+    transition: 0.3s ease-in-out;
+
+    &:hover {
+      font-size: 2em;
+    }
+  }
+}

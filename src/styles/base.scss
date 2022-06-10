@@ -1,6 +1,15 @@
 .App {
   text-align: center;
 
+  .web-link {
+    @include formButton;
+    text-decoration: none;
+    border: 2px solid $white;
+    padding: 3px;
+    margin-bottom: 30px;
+    margin-top: -40px;
+  }
+
   h1 {
     font-family: "Orbitron", sans-serif;
     letter-spacing: 12px;

@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumpsterFire } from "@fortawesome/free-solid-svg-icons";
 import PostDetail from "./post-detail";
-import { useLocation } from "react-router-dom";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -79,7 +78,7 @@ const Home = () => {
                     textShadow: "0px 1px black",
                   }}
                 >
-                  {item.description}
+                  {item.description.slice(0, 100, 1) + "..."}
                 </div>
 
                 {token &&
@@ -87,19 +86,16 @@ const Home = () => {
                 token !== undefined &&
                 token !== null ? (
                   <div className="change-button-wrapper">
-                    <Link
-                      to={`/post/${item.id}`}
-                      component={PostDetail}
-                      className="edit-button"
-                    >
+                    <Link to={`/post/${item.id}`} className="edit-button">
                       EDIT
-                      <button
-                        onClick={() => handleDeleteClick(item.id)}
-                        className="delete-button"
-                      >
-                        DELETE
-                      </button>
                     </Link>
+
+                    <button
+                      onClick={() => handleDeleteClick(item.id)}
+                      className="delete-button"
+                    >
+                      DELETE
+                    </button>
                   </div>
                 ) : (
                   <div className="read-more-button-wrapper">

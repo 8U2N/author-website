@@ -2,6 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 
 function PostDetail() {
+  const [description, setDescription] = useState([]);
+  const [postId, setPostId] = useState([]);
+  const [title, setTitle] = useState([]);
+  const [image, setImage] = useState([]);
+
   const [post, setPost] = useState({
     description: "",
     id: "",
@@ -11,11 +16,7 @@ function PostDetail() {
 
   const token = sessionStorage.getItem("token");
   const location = useLocation();
-
-  const [description, setDescription] = useState([]);
-  const [postId, setPostId] = useState([]);
-  const [title, setTitle] = useState([]);
-  const [image, setImage] = useState([]);
+  const history = useHistory();
 
   const updatePost = useState({
     description: description,
@@ -42,21 +43,13 @@ function PostDetail() {
     console.log("this is post: ", post);
   }
 
-  //   useEffect(() => {
-  //     getFeaturedPost();
-  //   }, []);
-
-  //   function getFeaturedPost() {
-  //     fetch(`http://127.0.0.1:5000/post/${post.id}`)
-  //       .then((response) => response.json())
-  //       .then((data) => console.log(data));
-  //     // setDescription(post.description);
-  //     // setPostId(post.postId);
-  //     // setImage(post.image);
-  //     // setTitle(post.title);
-  //   }
-
   function handleEditClick(id) {
+    const updatePost = {
+      description: description || "",
+      id: postId || "",
+      title: title || "",
+      image: image || "",
+    };
     const options = {
       method: "PUT",
       headers: {
@@ -71,7 +64,8 @@ function PostDetail() {
           .json()
           .then((response) => {
             console.log(response);
-            getPost();
+            setPost(updatePost);
+            history.push("/home");
           })
           .catch((error) => {
             console.error("Error: Update Failed!", error);
@@ -95,6 +89,8 @@ function PostDetail() {
                 <h2 style={{ color: "white" }}>
                   Edit Details for {post.title}
                 </h2>
+                <img src={post.image} style={{ width: "150px" }} alt="post" />
+                <img src={image} style={{ width: "150px" }} alt="post" />
                 <input
                   placeholder="New Image Url"
                   name="image"
@@ -173,8 +169,8 @@ function PostDetail() {
               </div>
             ) : (
               <div className="read-more-button-wrapper">
-                <Link to={`/${post.title}`}>
-                  <button className="read-more-button">READ MORE</button>
+                <Link to={"/home"}>
+                  <button className="read-more-button">BACK TO BLOG</button>
                 </Link>
               </div>
             )}

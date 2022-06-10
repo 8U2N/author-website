@@ -41,4 +41,23 @@
     @include formButton;
     margin-top: 20px;
   }
+
+  .change-button-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    a {
+      border: 2px solid $white;
+      @include formButton;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0;
+      margin: 0;
+      width: 100px;
+      height: 43px;
+      margin-top: 20px;
+    }
+  }
 }

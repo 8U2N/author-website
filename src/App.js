@@ -33,11 +33,11 @@ function App() {
           <Route path="/login" component={Login} />
           <Route path="/post/:postId" component={PostDetail} />
 
-          {/* {token ? (
+          {token ? (
             <Route path="/post-manager" component={PostManager} />
           ) : (
             <Route path="/" component={LandingPage} />
-          )} */}
+          )}
           <Route path="/thank-you" component={ThankYou} />
           <Route component={NoMatch} />
         </Switch>

@@ -19,23 +19,45 @@
     overflow: scroll;
     width: 100vw;
 
-    .featured-image-container {
-      img {
-        box-shadow: 1px 3px 3px 3px slategray;
+    .post-container {
+      @include formStyle;
+      background: black;
+
+      input,
+      textarea {
+        margin: 20px;
+      }
+
+      textarea {
+        width: 360px;
+
+        &:active {
+          height: 360px;
+        }
+      }
+
+      .featured-image-container {
+        img {
+          box-shadow: 1px 3px 3px 3px slategray;
+          border-radius: 10px;
+          margin-top: 20px;
+        }
+      }
+
+      .content-container {
+        background-color: $white;
         border-radius: 10px;
+        width: 80vw;
+        text-align: justify;
+        padding: 10px;
         margin-top: 20px;
+        margin-bottom: 40px;
+        box-shadow: 1px 3px 3px 3px slategray;
       }
     }
 
-    .content-container {
-      background-color: $white;
-      border-radius: 10px;
-      width: 80vw;
-      text-align: justify;
-      padding: 10px;
-      margin-top: 20px;
-      margin-bottom: 40px;
-      box-shadow: 1px 3px 3px 3px slategray;
+    button {
+      @include formButton;
     }
   }
 }
