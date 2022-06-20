@@ -9,6 +9,7 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
   const [menuIcon, setMenuIcon] = useState(true);
+  const [menu, setMenu] = useState(false);
   const token = sessionStorage.getItem("token");
 
   const handleClick = () => setClick(!click);
@@ -23,7 +24,7 @@ function Navbar() {
   const showButton = () => {
     if (window.innerWidth >= 960) {
       setButton(false);
-      if (closeMobileMenu(false)) setButton(false);
+      if (closeMobileMenu(false)) setButton(true);
     } else {
       setButton(true);
     }
@@ -37,7 +38,15 @@ function Navbar() {
     }
   };
 
-  window.addEventListener("resize", showButton, showMenuIcon);
+  const showMenu = () => {
+    if (window.innerWidth >= 960) {
+      setMenu(true);
+    } else {
+      setMenu(false);
+    }
+  };
+
+  window.addEventListener("resize", showButton, showMenuIcon, showMenu);
 
   return (
     <>
@@ -51,6 +60,7 @@ function Navbar() {
           >
             <FontAwesomeIcon icon={faDumpsterFire} />
           </Link>
+
           {menuIcon ? (
             <div className="menu-icon" onClick={handleClick}>
               {click ? (
@@ -62,8 +72,8 @@ function Navbar() {
           ) : (
             false
           )}
-
           {button && <Button buttonStyle="btn--outline">SIGN UP</Button>}
+
           <ul className={click ? "nav-menu-active" : "nav-menu"}>
             <li className="nav-link">
               <Link
@@ -119,6 +129,7 @@ function Navbar() {
                 Sign Up
               </Link>
             </li>
+
             {token && token !== "" && token !== undefined && token !== null ? (
               <li className="nav-link">
                 <Link

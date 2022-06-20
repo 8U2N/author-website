@@ -15,12 +15,13 @@ function About() {
         </div>
         <h2>Author</h2>
         <div className="content-container">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-          voluptatum dolores et sunt distinctio esse temporibus voluptas quia ad
-          omnis a quae laboriosam non, doloribus dignissimos ratione. Nemo
-          veritatis vero praesentium facere quam et velit rem voluptate
-          doloribus repellat soluta pariatur, doloremque ipsam possimus corporis
-          exercitationem ipsa molestiae?
+          Tyler E.C. Burnworth lives in the shadow of Area 51, a diamond in the
+          desert wastes called Las Vegas. His days are spent as an F-16
+          mechanic, his nights as a husband to Lydia, his superhuman wife, and
+          as a father to two rambunctious little ruffians whose public behavior
+          determines whether they are claimed or not. The writing happens at
+          that magic time of late night/early morning, a time most know as
+          "sleep."
         </div>
         <div className="featured-image-wrapper">
           <img src={veteran} alt="developer" style={{ width: "300px" }}></img>
@@ -28,24 +29,23 @@ function About() {
 
         <h2>Veteran</h2>
         <div className="content-container">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam error
-          neque, necessitatibus dolores quae quia esse cumque velit. Odio ipsum
-          minus, laudantium veritatis optio quisquam illum. Dolore, odit. Atque
-          beatae ea veniam adipisci illum excepturi, ducimus accusantium
-          blanditiis architecto a hic vitae? Blanditiis molestias hic quae
-          suscipit pariatur!
+          Master Sergeant Burnworth's Air Force career spanned 14 years as a
+          tactical aircraft maintenance technician on the F-16 Fighting Falcon,
+          many of those years spent with the 926th Aircraft Maintenance Squadron
+          at Viper AMU, and as a civilian contractor with M1 Support Services at
+          Falcon Aircraft Maintenance Squadron on Nellis Air Force Base with
+          some of the Air Force's finest maintainers.
         </div>
         <div className="featured-image-wrapper">
           <img src={developer} alt="developer" style={{ width: "300px" }}></img>
         </div>
         <h2>Full Stack Developer</h2>
         <div className="content-container">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam error
-          neque, necessitatibus dolores quae quia esse cumque velit. Odio ipsum
-          minus, laudantium veritatis optio quisquam illum. Dolore, odit. Atque
-          beatae ea veniam adipisci illum excepturi, ducimus accusantium
-          blanditiis architecto a hic vitae? Blanditiis molestias hic quae
-          suscipit pariatur! Check out my
+          Fresh out of the Full Stack Developer Certification Course at Bottega
+          University, Tyler's coding skills are a work in progress. Yesterday, a
+          Blackjack game ran in the terminal, built with Python. Today, this
+          app, built in React using JSX, Python, and Javascript. Tomorrow...more
+          to come! Check out Tyler's
           <a
             href="https://tyler-b-portfolio.herokuapp.com/"
             alt="link to developer portfolio"
