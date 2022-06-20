@@ -40,7 +40,7 @@ function PostUploadForm() {
         description: values.description,
       }),
     };
-    fetch("http://127.0.0.1:5000/post", options)
+    fetch("https://by-blood-or-by-star-back.herokuapp.com/post", options)
       .then((response) => {
         if (response.status === 200) return response.json();
       })

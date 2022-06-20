@@ -37,7 +37,10 @@ function PostDetail() {
         "Access-Control-Allow-Origin": "http:127.0.0.1:3000",
       },
     };
-    fetch(`http://127.0.0.1:5000${location.pathname}`, options)
+    fetch(
+      `https://by-blood-or-by-star-back.herokuapp.com${location.pathname}`,
+      options
+    )
       .then((response) => response.json())
       .then((data) => setPost(data));
     console.log("this is post: ", post);
@@ -58,20 +61,21 @@ function PostDetail() {
       },
       body: JSON.stringify({ ...updatePost }),
     };
-    fetch(`http://127.0.0.1:5000/post/update/${id}`, options).then(
-      (response) => {
-        response
-          .json()
-          .then((response) => {
-            console.log(response);
-            setPost(updatePost);
-            history.push("/home");
-          })
-          .catch((error) => {
-            console.error("Error: Update Failed!", error);
-          });
-      }
-    );
+    fetch(
+      `https://by-blood-or-by-star-back.herokuapp.com/post/update/${id}`,
+      options
+    ).then((response) => {
+      response
+        .json()
+        .then((response) => {
+          console.log(response);
+          setPost(updatePost);
+          history.push("/home");
+        })
+        .catch((error) => {
+          console.error("Error: Update Failed!", error);
+        });
+    });
   }
 
   return (

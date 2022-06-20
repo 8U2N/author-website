@@ -45,7 +45,9 @@ function App() {
       <div className="app-footer-wrapper">
         <p>
           Coded by 8U2N with<em>_</em>
-          <a href="http://127.0.0.1:3000/thank-you">friends</a>
+          <a href="https://by-blood-or-by-star-back.herokuapp.com/thank-you">
+            friends
+          </a>
         </p>
       </div>
     </div>

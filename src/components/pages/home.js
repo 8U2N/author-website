@@ -21,13 +21,13 @@ const Home = () => {
         "Content-Type": "application/json",
       },
     };
-    fetch("http://127.0.0.1:5000/posts", options)
+    fetch("https://by-blood-or-by-star-back.herokuapp.com/posts", options)
       .then((response) => response.json())
       .then((data) => setData(data));
   }
 
   function handleDeleteClick(id) {
-    fetch(`http://127.0.0.1:5000/delete/${id}`, {
+    fetch(`https://by-blood-or-by-star-back.herokuapp.com/delete/${id}`, {
       method: "DELETE",
     }).then((response) => {
       response.json().then((response) => {

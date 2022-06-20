@@ -40,7 +40,7 @@ export default function LoginForm() {
         password: values.password,
       }),
     };
-    fetch("http://127.0.0.1:5000/login", options)
+    fetch("https://by-blood-or-by-star-back.herokuapp.com/login", options)
       .then((response) => {
         if (response.status === 200) return response.json();
       })
