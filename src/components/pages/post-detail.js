@@ -34,7 +34,6 @@ function PostDetail() {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http:127.0.0.1:3000",
       },
     };
     fetch(
@@ -57,7 +56,6 @@ function PostDetail() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "http:127.0.0.1:3000",
       },
       body: JSON.stringify({ ...updatePost }),
     };

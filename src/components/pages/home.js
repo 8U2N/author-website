@@ -17,7 +17,6 @@ const Home = () => {
     const options = {
       method: "GET",
       headers: {
-        "Access-Control-Allow-Origin": "http:127.0.0.1:3000",
         "Content-Type": "application/json",
       },
     };
