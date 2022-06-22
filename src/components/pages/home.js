@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDumpsterFire } from "@fortawesome/free-solid-svg-icons";
-import PostDetail from "./post-detail";
 
 const Home = () => {
   const [data, setData] = useState([]);
